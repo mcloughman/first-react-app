@@ -1,5 +1,5 @@
 import { useState } from "react";
-import BlogList from "./BlogList";
+import HikeList from "./HikeList";
 
 const Home = () => {
   const [hikes, setHikes] = useState([
@@ -29,9 +29,20 @@ const Home = () => {
     },
   ]);
 
+  const handleDelete = (id) => {
+    const newHikes = hikes.filter((hike) => hike.id !== id);
+    setHikes(newHikes);
+  };
+
   return (
     <div className="home">
-      <BlogList hikes={hikes} title="All Hikes" />
+      <HikeList hikes={hikes} title="All Hikes" handleDelete={handleDelete} />
+      {/*  Below is how you would filter the hike list using filter
+      <HikeList
+        hikes={hikes.filter((hike) => hike.author === "Jeffery")}
+        title="Jeffery's Blogs"
+      />
+      */}
     </div>
   );
 };

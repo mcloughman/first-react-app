@@ -1,7 +1,7 @@
-const BlogList = ({ hikes, title }) => {
+const HikeList = ({ hikes, title, handleDelete }) => {
   return (
     <div className="hike-list">
-      <h1>{title}</h1>
+      <h1 id="hike-title">{title}</h1>
       {hikes.map((hike) => {
         return (
           <div className="hike-preview" key={hike.id}>
@@ -14,6 +14,9 @@ const BlogList = ({ hikes, title }) => {
               </i>
             </p>
             <img src={hike.photo} style={{ width: "400px" }} alt={hike.title} />
+            <button onClick={() => handleDelete(hike.id)} id="delete-hike">
+              Delete Hike
+            </button>
           </div>
         );
       })}
@@ -21,4 +24,4 @@ const BlogList = ({ hikes, title }) => {
   );
 };
 
-export default BlogList;
+export default HikeList;
