@@ -7,7 +7,7 @@ body {
 .navbar {
   display: flex;
   align-items: center;
-  background-color: lightblue;
+  background-color: coral;
   padding-left: 30px;
 }
 .navbar h1 {
@@ -29,6 +29,14 @@ body {
   margin: 40px auto;
 }
 
-#author {
-  font-style: "italic";
+.hike-preview {
+  margin-bottom: 80px;
+}
+
+.hike-preview:hover {
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: navy;
 }

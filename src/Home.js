@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BlogList from "./BlogList";
 
 const Home = () => {
   const [hikes, setHikes] = useState([
@@ -18,25 +19,19 @@ const Home = () => {
       author: "Manuela",
       id: 2,
     },
+    {
+      title: "Terrace Canyon",
+      body: "Another beautful hike that begins at the Pine Creek Trailhead inside the Scenic Red Rock Loop Drive. For about the first mile, this hike follows the exact same trail as Fern Canyon. But instead of going to the right of Mescalito, the shorter peak with the Red Cap, this route goes to the left. This hike is longer than Fern Canyon. There lots of class 2 & 3 boulder scrambling. And you really need to pay attention to the directions and or waypoints from Branch Whitney's book, Hiking Las Vegas. Even then it's easy to miss a turn or to end up in Gunsight Canyon instead of Terrace Canyon. So it's best to try and go with someone who has done it before. The canyon is beautiful, especially when there's seasonal water cascading down the terraces. Love to use the word 'cascading'.",
+      photo:
+        "https://res.cloudinary.com/mrjiggyfly/image/upload/v1595529070/Terrace%20Canyon/IMG_0227_vbahrd.jpg",
+      author: "Jeffery",
+      id: 3,
+    },
   ]);
 
   return (
     <div className="home">
-      {hikes.map((hike) => {
-        return (
-          <div className="hike-preview" key={hike.id}>
-            <h2>{hike.title}</h2>
-            <p>{hike.body.substring(0, 100)}...</p>
-            <p>
-              Author:{" "}
-              <i>
-                <b>{hike.author}</b>
-              </i>
-            </p>
-            <img src={hike.photo} style={{ width: "400px" }} alt={hike.title} />
-          </div>
-        );
-      })}
+      <BlogList hikes={hikes} title="All Hikes" />
     </div>
   );
 };
