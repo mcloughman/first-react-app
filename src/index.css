@@ -2,12 +2,14 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+  background-color: #f4db7d;
 }
 
 .navbar {
   display: flex;
   align-items: center;
-  background-color: coral;
+  background-color: #1a2238;
+  color: #ff6a3d;
   padding-left: 30px;
 }
 .navbar h1 {
@@ -21,7 +23,8 @@ body {
 
 .links a {
   margin: 0 16px;
-  text-decoration: none;
+
+  color: #ff6a3d;
 }
 
 .content {
@@ -41,7 +44,7 @@ body {
   font-size: 2.5rem;
   margin-left: 40%;
   margin-bottom: 80px;
-  color: navy;
+  color: #1a2238;
 }
 
 #delete-hike {

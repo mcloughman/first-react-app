@@ -1,4 +1,4 @@
-const HikeList = ({ hikes, title, handleDelete }) => {
+const HikeList = ({ hikes, title }) => {
   return (
     <div className="hike-list">
       <h1 id="hike-title">{title}</h1>
@@ -14,9 +14,6 @@ const HikeList = ({ hikes, title, handleDelete }) => {
               </i>
             </p>
             <img src={hike.photo} style={{ width: "400px" }} alt={hike.title} />
-            <button onClick={() => handleDelete(hike.id)} id="delete-hike">
-              Delete Hike
-            </button>
           </div>
         );
       })}
