@@ -50,3 +50,32 @@ body {
 #delete-hike {
   display: block;
 }
+
+.hike-preview a {
+  text-decoration: none;
+}
+
+fieldset {
+  text-align: center;
+}
+
+.create label {
+  display: block;
+}
+
+.create input,
+.create textarea {
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+.add-btn {
+  margin-left: 40%;
+  margin-top: 20px;
+  padding: 15px;
+  color: #ff6a3d;
+  background-color: #1a2238;
+  border-radius: 5%;
+  font-size: 20px;
+  cursor: pointer;
+}
