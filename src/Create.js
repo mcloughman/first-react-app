@@ -1,16 +1,34 @@
 import { useState } from "react";
+import useFetch from "./useFetch";
 
 const Create = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("Michael");
+  const [photo, setPhoto] = useState("");
+  const [isPending, setIsPending] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const hike = { title, body, author, photo };
+    setIsPending(true);
+    fetch("http://localhost:8000/hikes", {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(hike),
+    }).then(() => {
+      console.log("New Blog Added!");
+      setIsPending(false);
+    });
+  };
   return (
     <div className="create">
-      <form>
+      <form onSubmit={handleSubmit}>
         <fieldset>
           <h2>Add a New Hike</h2>
           <label>Hike Title</label>
           <input
+            style={{ height: "20px" }}
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
@@ -30,8 +48,16 @@ const Create = () => {
             <option value="manuela">Manuela</option>
             <option value="jeffery">Jeffery</option>
           </select>
+          <label id="img-label">Image Url</label>
+          <input
+            type="text"
+            id="img-url"
+            value={photo}
+            onChange={(e) => setPhoto(e.target.value)}
+          />
         </fieldset>
-        <button class="add-btn">Add Hike</button>
+        {!isPending && <button className="add-btn">Add Hike</button>}
+        {isPending && <button disabled>Adding hike...</button>}
       </form>
     </div>
   );

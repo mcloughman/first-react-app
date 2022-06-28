@@ -79,3 +79,7 @@ fieldset {
   font-size: 20px;
   cursor: pointer;
 }
+
+#img-label {
+  margin-top: 20px;
+}
