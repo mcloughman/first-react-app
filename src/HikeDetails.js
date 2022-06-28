@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import useFetch from "./useFetch";
 
 const HikeDetails = () => {
@@ -8,6 +8,17 @@ const HikeDetails = () => {
     isPending,
     error,
   } = useFetch("http://localhost:8000/hikes/" + id);
+
+  const history = useHistory();
+
+  const handleClick = () => {
+    fetch("http://localhost:8000/hikes/" + hike.id, {
+      method: "DELETE",
+    }).then(() => {
+      history.push("/");
+    });
+  };
+
   return (
     <div className="hike-details">
       {isPending && <div>Loading...</div>}
@@ -22,6 +33,7 @@ const HikeDetails = () => {
             alt={`${hike.title}`}
           />
           <p>{hike.body}</p>
+          <button onClick={handleClick}>Delete Hike</button>
         </article>
       )}
     </div>

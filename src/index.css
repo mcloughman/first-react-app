@@ -90,3 +90,13 @@ fieldset {
 .hike-details p {
   color: navy;
 }
+
+.hike-details button {
+  font-size: 18px;
+  background-color: #ff6a3d;
+  color: #1a2238;
+  padding: 10px;
+  margin-left: 40%;
+  border-radius: 5%;
+  cursor: pointer;
+}
