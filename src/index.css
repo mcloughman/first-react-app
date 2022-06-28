@@ -3,6 +3,7 @@
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #f4db7d;
+  color: navy;
 }
 
 .navbar {
@@ -30,6 +31,7 @@ body {
 .content {
   max-width: 600px;
   margin: 40px auto;
+  color: navy;
 }
 
 .hike-preview {
@@ -82,4 +84,9 @@ fieldset {
 
 #img-label {
   margin-top: 20px;
+}
+
+.hike-details h2,
+.hike-details p {
+  color: navy;
 }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useFetch from "./useFetch";
+import { useHistory } from "react-router-dom";
 
 const Create = () => {
   const [title, setTitle] = useState("");
@@ -7,6 +7,7 @@ const Create = () => {
   const [author, setAuthor] = useState("Michael");
   const [photo, setPhoto] = useState("");
   const [isPending, setIsPending] = useState(false);
+  const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,6 +20,7 @@ const Create = () => {
     }).then(() => {
       console.log("New Blog Added!");
       setIsPending(false);
+      history.push("/");
     });
   };
   return (
